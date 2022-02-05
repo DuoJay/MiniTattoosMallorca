@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 :root {
     --background-color: #eee;
     --border-color: #ddd;
     --font-color: #444;
+    --content-font: 'Abel', sans-sarif
 }
 
 * {
@@ -15,11 +17,18 @@
 body {
     background-color: var(--background-color);
     margin: 0;
+    display: grid;
+    grid-template-rows: 5rem auto;
+    grid-template-areas:
+        "header"
+        "main"
 }
 
 .main-header {
+    position: fixed;
+    grid-area: header;
+    background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
-    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,11 +39,6 @@ body {
     border-bottom: 4px solid var(--border-color);
 }
 
-/* .menu-burger {
-    content: 'e5d2';
-    font-family: 'Material Icons';
-    font-size: 2.5rem;
-} */
 .menu-burger {
     background-color: transparent;
     border: none;
@@ -98,7 +102,7 @@ small {
 }
 
 .mobile-nav {
-    position: absolute;
+    position: fixed;
     background-color: var(--background-color);
     width: 80vw;
     height: 100vh;
@@ -123,6 +127,17 @@ small {
     z-index: 2;
 }
 
+.arrow-down {
+    content: 'ead0';
+    font-family: 'Material Icons';
+}
+
+#arrows {
+    margin: 1rem;
+    display: block;
+    text-align: center;
+}
+
 .mobile-nav__items {
     background-color: var(--background-color);
     width: 100%;
@@ -144,4 +159,63 @@ small {
     padding: 20px;
     width: 100%;
     border-bottom: 2px solid var(--border-color)
+}
+
+main {
+    grid-area: main;
+
+}
+
+.main-container {
+    /* display: flex; */
+    flex-direction: column;
+    font-family: var(--content-font);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--content-font);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.content-headline {
+    margin: 0;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.content-headline__even {
+    text-align: right;
+    margin: 0;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.content-text {
+    text-align: right;
+    padding: 2rem;
+    font-size: 1.5rem;
+    padding: 0 2rem 0 2rem;
+    margin-top: 0;
+}
+
+.content-text__even {
+    text-align: left;
+}
+
+.highlighted {
+    opacity: 0.7;
+}
+
+.about-me__image {
+    background: url("images/Dave.jpg") no-repeat;
+    background-size: 100%;
+    background-position: 0 -50px;
+    width: 100vw;
+    height: 25vh;
+    border-bottom: 2px solid var(--border-color)
+}
+
+.main-container img {
+    width: 100%;
 }
