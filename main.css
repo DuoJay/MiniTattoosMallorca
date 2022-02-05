@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --background-color: #eee;
+    --border-color: #ddd;
+    --font-color: #444;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+}
+
+.main-header {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    border-bottom: 4px solid var(--border-color);
+}
+
+/* .menu-burger {
+    content: 'e5d2';
+    font-family: 'Material Icons';
+    font-size: 2.5rem;
+} */
+.menu-burger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    width: 2.5rem;
+}
+
+.line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+
+.name {
+    font-size: 1.8rem;
+}
+
+small {
+    font-size: 0.5rem;
+    display: block;
+    text-align: right;
+    margin: 0;
+}
+
+.mobile-nav {
+    position: absolute;
+    background-color: var(--background-color);
+    width: 80vw;
+    height: 100vh;
+    margin: 0;
+    top: 5rem;
+    left: 0;
+    transform: ease;
+}
+
+.toggle-mobile-nav {
+    transform: translateX(-80vw);
+}
+
+
+.mobile-nav-closeCHANGE {
+    content: 'e5cd';
+    font-family: 'Material Icons';
+    position: absolute;
+    font-size: 2.5rem;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.mobile-nav__items {
+    background-color: var(--background-color);
+    width: 100%;
+    position: absolute;
+    left: 0px;
+}
+
+.mobile-nav__items {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav__item {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 2px solid var(--border-color)
+}
