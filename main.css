@@ -37,6 +37,7 @@ body {
     height: 5rem;
     padding: 1rem;
     border-bottom: 4px solid var(--border-color);
+    z-index: 5;
 }
 
 .menu-burger {
@@ -110,6 +111,7 @@ small {
     top: 5rem;
     left: 0;
     transition: 0.5s ease-in;
+    z-index: 10;
 }
 
 .toggle-mobile-nav {
@@ -167,36 +169,36 @@ main {
 }
 
 .main-container {
-    /* display: flex; */
-    flex-direction: column;
     font-family: var(--content-font);
 }
 
 .content {
+    height: calc(100vh - 5rem);
+    border-bottom: 2px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    font-family: var(--content-font);
-    border-bottom: 2px solid var(--border-color);
+    align-items: center;
 }
 
-.content-headline {
-    margin: 0;
-    padding: 2rem 2rem 0 2rem;
+.content-text__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90vw;
+    margin-top: 3rem;
+}
+
+.content-text {
+    display: inline-block;
+    text-align: right;
+    font-size: 1.5rem;
 }
 
 .content-headline__even {
     text-align: right;
-    margin: 0;
-    padding: 2rem 2rem 0 2rem;
-}
-
-.content-text {
-    text-align: right;
-    padding: 2rem;
-    font-size: 1.5rem;
-    padding: 0 2rem 0 2rem;
-    margin-top: 0;
+    width: 100%;
+    padding-right: 0;
 }
 
 .content-text__even {
@@ -204,18 +206,28 @@ main {
 }
 
 .highlighted {
-    opacity: 0.7;
+    color: rgba(211, 118, 32, 0.699);
 }
 
 .about-me__image {
-    background: url("images/Dave.jpg") no-repeat;
-    background-size: 100%;
-    background-position: 0 -50px;
-    width: 100vw;
-    height: 25vh;
-    border-bottom: 2px solid var(--border-color)
+    /* position: relative; */
+    overflow: hidden;
+    height: 45vh;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.about-me__image img {
+    position: relative;
+    top: -100px;
 }
 
 .main-container img {
     width: 100%;
+}
+
+@media(min-width: 40rem) {
+    .main-container {
+        width: 50%;
+        margin: auto;
+    }
 }
