@@ -15,14 +15,26 @@
 
 
 body {
+    display: grid;
     background-color: var(--background-color);
     margin: 0;
-    display: grid;
     grid-template-rows: 5rem auto;
-    grid-template-areas:
-        "header"
+    grid-template-areas: "header"
         "main"
+
 }
+
+a {
+    text-decoration: none;
+}
+
+
+.highlighted {
+    color: rgba(211, 118, 32, 0.699);
+}
+
+
+
 
 .main-header {
     position: fixed;
@@ -36,7 +48,6 @@ body {
     width: 100%;
     height: 5rem;
     padding: 1rem;
-    border-bottom: 4px solid var(--border-color);
     z-index: 5;
 }
 
@@ -90,9 +101,10 @@ body {
     stroke-width: 6;
 }
 
-
 .name {
     font-size: 1.8rem;
+    text-decoration: 0;
+    color: black;
 }
 
 small {
@@ -110,7 +122,26 @@ small {
     margin: 0;
     top: 5rem;
     left: 0;
-    transition: 0.5s ease-in;
+    transition: 400ms ease-out;
+    z-index: 15;
+}
+
+.backdrop {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    transition: 400ms linear;
+    z-index: -10;
+}
+
+.toggle-backdrop {
+    opacity: 1;
     z-index: 10;
 }
 
@@ -118,7 +149,7 @@ small {
     transform: translateX(-80vw);
 }
 
-
+/* 
 .mobile-nav-closeCHANGE {
     content: 'e5cd';
     font-family: 'Material Icons';
@@ -127,7 +158,7 @@ small {
     top: 0;
     left: 0;
     z-index: 2;
-}
+} */
 
 .arrow-down {
     content: 'ead0';
@@ -140,36 +171,37 @@ small {
     text-align: center;
 }
 
-.mobile-nav__items {
-    background-color: var(--background-color);
-    width: 100%;
-    position: absolute;
-    left: 0px;
-}
 
 .mobile-nav__items {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    background-color: var(--background-color);
+    width: 100%;
+    left: 0px;
 }
 
 .mobile-nav__item {
     background-color: var(--background-color);
     color: var(--font-color);
-    text-decoration: none;
     padding: 20px;
     width: 100%;
-    border-bottom: 2px solid var(--border-color)
+    border-bottom: 2px solid var(--border-color);
 }
 
-main {
-    grid-area: main;
-
+.mobile-nav__item:first-of-type {
+    border-top: 2px solid var(--border-color);
 }
 
 .main-container {
+    grid-area: main;
     font-family: var(--content-font);
+    width: 100%
+}
+
+#about-me,
+#gallery {
+    scroll-margin-top: 5rem;
 }
 
 .content {
@@ -180,17 +212,34 @@ main {
     align-items: center;
 }
 
+.about-me__image {
+    position: relative;
+    overflow: hidden;
+    height: 45vh;
+    width: 100%;
+    border-bottom: 2px solid var(--border-color);
+}
+
+
+.about-me__image img {
+    height: inherit;
+    object-fit: cover;
+    object-position: 50% 30%;
+    width: 100%;
+}
+
 .content-text__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 90vw;
-    margin-top: 3rem;
+    padding: 2rem;
+    margin: auto 0;
+}
+
+.content-headline {
+    text-align: left;
 }
 
 .content-text {
-    display: inline-block;
     text-align: right;
     font-size: 1.5rem;
 }
@@ -205,24 +254,70 @@ main {
     text-align: left;
 }
 
-.highlighted {
-    color: rgba(211, 118, 32, 0.699);
-}
-
-.about-me__image {
-    /* position: relative; */
-    overflow: hidden;
-    height: 45vh;
-    border-bottom: 2px solid var(--border-color);
-}
-
-.about-me__image img {
-    position: relative;
-    top: -100px;
-}
-
-.main-container img {
+.insta-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100%;
+}
+
+.insta-image {
+    width: 33%;
+    float: left;
+    clear: none;
+    transition: 500ms ease;
+}
+
+.open-image {
+    width: 100%;
+    left: 0;
+    top: 0;
+    border: 5px solid var(--border-color);
+    opacity: 1;
+}
+
+.close-image {
+    display: none;
+    opacity: 1;
+}
+
+
+
+.send-email__form {
+    height: 45vh;
+    margin-top: 5rem;
+    margin-top: 1rem;
+}
+
+.send-email__form label {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.send-email__form input,
+.send-email__form button {
+    display: inline-block;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    background-color: var(--background-color);
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    color: var(--font-color);
+}
+
+#send-email__button {
+    width: 100%;
+    padding: 1rem;
+}
+
+#mail-text {
+    height: 35%;
 }
 
 @media(min-width: 40rem) {

@@ -13,24 +13,24 @@
 </head>
 <body>
 <header class="main-header">
-    <button class="menu-burger" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
+    <button class="menu-burger" onclick="this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu">
         <svg width="100" height="100" viewBox="0 0 100 100">
           <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
           <path class="line line2" d="M 20,50 H 80" />
           <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
         </svg>
       </button>
-        <div class="name">MiniTattoos <small>by David</small></div>
+       <a href="#about-me"><div class="name">MiniTattoos <small>by David</small></div>
 </header>
     <nav class="mobile-nav toggle-mobile-nav">
         <div class="mobile-nav__items">
         <a href="#about-me" class="mobile-nav__item">About Me</a>
         <a href="#gallery" class="mobile-nav__item">Gallery</a>
-        <a href="" class="mobile-nav__item">Reservation</a>
+        <a href="#reservation" class="mobile-nav__item">Reservation</a>
         <a href="" class="mobile-nav__item">Contact</a>
     </div>
 </nav>
-
+<div class="backdrop"></div>
 <main class="main-container">
   
     <div class="content" id="about-me">
@@ -38,13 +38,12 @@
           <img src="images/davetatooing.jpg" alt="">
         </div>
         <div class="content-text__container">
-          <h1 class="content-headline content-headline__odd">My name is David Vlasanek and I do tattoos.</h1>
+          <h1 class="content-headline content-headline__odd">My name is David Vlasanek and I do tattoos</h1>
           <p class="content-text content-text_odd"> And I didn't say what should be here yet. So for now <span class="highlighted">this here</span> is the content.</p>
         </div>
     </div>
 
     <div class="content">
-
       <div class="content-text__container">
         <h1 class="content-headline content-headline__even"   id="gallery">I am based in Mallorca</h1>
         <p class="content-text content-text__even"> My specialization are small tattoos that you can take with you <span class="highlighted">anywhere</span> .</p>
@@ -52,16 +51,42 @@
             <span class="material-icons-outlined arrow-down">
           keyboard_double_arrow_down
             </span>
-          Check some of them.
+              Check some of them.
             <span class="material-icons-outlined arrow-down">
             keyboard_double_arrow_down
             </span>
           </span>
             </p>
-          </div>
-        <div class="insta-image"><img src="images/insta1.jpg" alt=""></div>
-        <div class="insta-image"><img src="images/insta2.jpg" alt=""></div>
+      </div>
+        <div class="insta-images">
+          <img src="images/insta1.jpg" alt="" class="insta-image">
+          <img src="images/insta2.jpg" alt="" class="insta-image">
+          <img src="images/insta1.jpg" alt="" class="insta-image">
+          <img src="images/insta2.jpg" alt="" class="insta-image">
+          <img src="images/insta1.jpg" alt="" class="insta-image">
+          <img src="images/insta2.jpg" alt="" class="insta-image">
+          <img src="images/insta1.jpg" alt="" class="insta-image">
+          <img src="images/insta2.jpg" alt="" class="insta-image">
+          <img src="images/insta1.jpg" alt="" class="insta-image">
+
+        </div>
     </div>
+
+    <div class="content" id="reservation">
+      <div class="content-text__container">
+        <h1 class="content-headline content-headline__odd">Reserve an appointment </h1>
+        <p class="content-text content-text_odd"> If you are interested, I'd be happy to see you. Send me your initials <span class="highlighted">here</span> and we'll find something out.</p>
+      <form action="mailto:deamiano@gmail.com" class="send-email__form">
+      <input type="text" name="name" placeholder="Enter Your Name">
+      <label for="date"> When do you want to meet.</label><input type="date" name="date" id="date">
+      <input type="text" placeholder="Enter your message here..." id="mail-text">
+      <button id="send-email__button">Send an email</button>
+  
+</form>
+
+      </div>
+  </div>
+
 
 
 
