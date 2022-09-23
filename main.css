@@ -149,13 +149,19 @@ small {
     display: block;
     text-align: center;
     transform: translateY(2rem);
+    color: var(--font-color);
 }
 
-.arrow-down {
-    content: 'ead0';
-    font-family: 'Material Icons';
+#arrows i {
+    vertical-align: middle;
+    font-size: 1.2rem;
 }
 
+#arrows span {
+    padding: 0 1rem;
+    vertical-align: middle;
+    font-size: 1.2rem;
+}
 
 .mobile-nav__items {
     position: absolute;
@@ -188,15 +194,15 @@ small {
     width: 100%
 }
 
-#about-me,
-#gallery {
+.content {
     scroll-margin-top: 5rem;
 }
 
-.content {
+.content:not(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1rem 0;
 }
 
 .about-me__image {
@@ -326,6 +332,27 @@ small {
 
 #mail-text {
     height: 35%;
+}
+
+.contacts {
+    width: 100%;
+    text-align: center;
+}
+
+.contacts a {
+    color: var(--font-color);
+    text-decoration: none;
+    font-size: 4rem;
+
+}
+
+#contact {
+    text-align: center;
+}
+
+#map {
+    margin: 0;
+    padding: 0;
 }
 
 @media(min-width: 40rem) {

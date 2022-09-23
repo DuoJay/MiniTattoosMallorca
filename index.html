@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/f7cd449f1a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <title>Mini Tatooos Mallorca</title>
@@ -27,7 +27,7 @@
         <a href="#about-me" class="mobile-nav__item">About Me</a>
         <a href="#gallery" class="mobile-nav__item">Gallery</a>
         <a href="#reservation" class="mobile-nav__item">Reservation</a>
-        <a href="" class="mobile-nav__item">Contact</a>
+        <a href="#contact" class="mobile-nav__item">Contact</a>
     </div>
 </nav>
 <div class="backdrop"></div>
@@ -48,15 +48,11 @@
         <h1 class="content-headline content-headline__even">I am based in Mallorca</h1>
         <p class="content-text content-text__even"> My specialization are small tattoos that you can take with you <span class="highlighted">anywhere</span> .</p>
           <span id="arrows">
-            <span class="material-icons-outlined arrow-down">
-          keyboard_double_arrow_down
-            </span>
-              Check some of them.
-            <span class="material-icons-outlined arrow-down">
-            keyboard_double_arrow_down
-            </span>
+              <i class="fa-solid fa-angles-down"></i>
+              <span>Check some of them.</span> 
+              <i class="fa-solid fa-angles-down"></i>
           </span>
-            </p>
+        </p>
       </div>
         <div class="gallery__images">
           <div class="gallery__image"><img src="images/tattoos/tattoo_1.jpg"></div>
@@ -74,23 +70,48 @@
     <div class="content" id="reservation">
       <div class="content-text__container">
         <h1 class="content-headline content-headline__odd">Make an appointment </h1>
-        <p class="content-text content-text_odd"> If you are interested, I'd be happy to see you. Send me your initials <span class="highlighted">here</span> and we'll find something out.</p>
+        <p class="content-text content-text_odd"> If you are interested, I'd be happy to see you. <br> Send me the info <span class="highlighted">here</span> and we'll find something out.</p>
       <form action="mailto:deamiano@gmail.com" class="send-email__form">
       <input type="text" name="name" placeholder="Enter Your Name">
       <label for="date"> When do you want to meet.</label><input type="date" name="date" id="date">
       <input type="text" placeholder="Enter your message here..." id="mail-text">
       <button id="send-email__button">Send an email</button>
   
-</form>
+      </form>
 
       </div>
   </div>
 
 
+<div class="content" id="contact">
+  <div class="content-text__container">
+    <h1 class="content-headline content-headline__even">Where will you find me</h1>
+<div class="contacts">
+  <a href="https://www.instagram.com/minitattoos_de_mallorca/">  <i class="fa-brands fa-instagram"></i> </a>
+  <a href="https://www.facebook.com/david.vlasanek">  <i class="fa-brands fa-facebook-square"></i> </a>
+</div>
 
+    <p class="content-text content-text__contacts"> You can meet me every working day from <br>
+      <span class="highlighted">10AM–1:30PM</span> and
+      <span class="highlighted">4–7:30PM</span> <br>
+      in our <br>
+      <a href="https://www.instagram.com/majestictattoostudio/?hl=en"> <b>Majestic Tattoo Studio</b></a>
+    </p>
+
+      <span id="arrows">
+          <i class="fa-solid fa-angles-down"></i>
+          <span>Check some of them.</span> 
+          <i class="fa-solid fa-angles-down"></i>
+      </span>
+    </p>
+  </div>
+<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3074.8504954960044!2d2.672699055054631!3d39.58551970170358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297930eb0cc79ef%3A0xafef4a3002d1d5ce!2sMAJESTIC%20TATTOO%20STUDIO!5e0!3m2!1sen!2scz!4v1645293949785!5m2!1sen!2scz" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
 
       
+
 </main>
+
     <script src="app.js"></script>
 </body>
 </html>
